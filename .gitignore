@@ -1,0 +1,8 @@
+###
+.env
+
+### api test
+test.http
+
+# dependencies
+node_modules/
