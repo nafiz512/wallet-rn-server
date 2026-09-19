@@ -29,8 +29,8 @@ export async function createTransaction(req, res) {
 export async function deleteTransaction(req, res) {
     try {
         const { Id } = await req.params;
-        const result = await sql`DELETE from transactions WHERE user_id=${Id} RETURNING *`
-        res.status(200).json(result);
+        const result = await sql`DELETE from transactions WHERE id=${Id}`
+        res.status(200).json({ message: "sucessfully deleted" });
     } catch (error) {
         console.log(error);
         res.send(500).json(error)
